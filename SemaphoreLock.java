@@ -69,8 +69,7 @@ public class SemaphoreLock {
 		try {
 			t1.join();t2.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Thread.currentThread().interrupt();
 		}
 		
 		System.out.println("done");
