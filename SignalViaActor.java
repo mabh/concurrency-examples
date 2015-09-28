@@ -35,8 +35,8 @@ final class Actor implements Runnable {
 				Integer t = this.queue.poll(10, TimeUnit.SECONDS);
 				if(null != t) {
 					this.consumer.accept(t);
+					Thread.sleep(500);
 				}
-				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				Thread.currentThread().interrupt();
 			}
