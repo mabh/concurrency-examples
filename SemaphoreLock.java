@@ -1,21 +1,12 @@
-/*
-* Copyright (c) 2013-2015 Software AG, Darmstadt, Germany 
-* and/or Software AG USA Inc., Reston, VA, USA, and/or 
-* its subsidiaries and or/its affiliates and/or their 
-* licensors.
-* Use, reproduction, transfer, publication or disclosure 
-* is prohibited except as specifically provided for in your 
-* License Agreement with Software AG.
-*/
-
+/**
+ * @author MABH
+ * An implementation of Lock (not exactly java.util.concurrent.locks.Lock interface) using single permit Semaphore
+ */
 package mt.ex;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
 
 final class CustomLock {
 	private Semaphore sem = new Semaphore(1, true);
